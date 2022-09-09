@@ -3,6 +3,9 @@ import requests
 import datetime
 
 from flask import Flask, render_template, request
+
+import os
+
 #import urllib.request
 app = Flask(__name__)
 
@@ -34,6 +37,9 @@ def mycovidinfo():
 
     else:
         return render_template("covid_home.html")
+port=int(os.environ.get("PORT", 5000))
 
+if __name__=="__main__":
+    app.run(port=port)
 
 app.run()
