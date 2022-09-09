@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <title>weather</title><!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"><!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="col-md-6 col-md-offset-3">
+<form method="post" action="/">
+    <input type="text" name="country" placeholder="enter country name">
+    <button type="submit">SUBMIT</button>
+</form>
+</div>
+
+<div class="col-md-6 col-md-offset-3">
+    {% if covidinfo %}
+    <h3>TotalConfirmedCases={{covidinfo.TotalConfirmed}}</h3>
+    <h3>TotalDeaths = {{covidinfo.TotalDeaths}}</h3>
+    {% else %}
+    <h3>Enter input properly</h3>
+    {% endif %}
+</div>
+</body>
+</html>
